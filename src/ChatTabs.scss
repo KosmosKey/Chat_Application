@@ -1,0 +1,28 @@
+.ChatTabs {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  .ChatTabs__TitleAvatar {
+    padding-top: 5px;
+    display: flex;
+    align-items: center;
+    .ChatTabs__Name {
+      margin-left: 15px;
+      h2 {
+        font-size: large;
+        color: #80a1ec;
+      }
+      p {
+        font-size: small;
+        color: #6d6d6e;
+      }
+    }
+  }
+  .ChatTabs__TimeStamps {
+    span {
+      font-size: small;
+      font-weight: bold;
+      color: #6d6d6e;
+    }
+  }
+}

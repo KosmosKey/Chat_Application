@@ -1,12 +1,13 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.scss";
+import ChatBody from "./ChatBody";
 
-function App() {
+const App: React.FC = () => {
   return (
     <div className="App">
-      <h1>Hello</h1>
+      <ChatBody />
     </div>
   );
-}
+};
 
 export default App;
