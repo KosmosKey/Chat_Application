@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import firebase from "firebase";
 import { IconButton } from "@material-ui/core";
 import SendIcon from "@material-ui/icons/Send";
 import db from "./firebase";
