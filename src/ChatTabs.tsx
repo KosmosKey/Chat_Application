@@ -12,13 +12,16 @@ interface Props {
 const ChatTabs: React.FC<Props> = ({ name, id }) => {
   const dispatch = useDispatch();
   return (
-    <div className="ChatTabs" onClick={() => dispatch(roomId({ room: id }))}>
+    <div
+      className="ChatTabs"
+      onClick={() => dispatch(roomId({ room: id, name: name.roomName }))}
+    >
       <div className="ChatTabs__TitleAvatar">
         <Avatar className="ChatTabs__Avatar">
           {name?.roomName?.charAt(0)}
         </Avatar>
         <div className="ChatTabs__Name">
-          <h2>{name?.roomName} lorem</h2>
+          <h2>{name?.roomName}</h2>
         </div>
       </div>
       <div className="ChatTabs__TimeStamps">

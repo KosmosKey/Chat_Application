@@ -41,6 +41,7 @@ const ChatBody: React.FC = () => {
   const checkInput = inputSearch.length < 1;
 
   const user = useSelector((state: any) => state.user.user);
+  const roomName = useSelector((state: any) => state.user.roomName);
   const roomId = useSelector((state: any) => state.user.roomId);
 
   const dispatch = useDispatch();
@@ -62,7 +63,7 @@ const ChatBody: React.FC = () => {
   useEffect(() => {
     if (roomId) {
       db.collection("rooms")
-        .doc(roomId?.room)
+        .doc(roomId)
         .collection("messages")
         .orderBy("timestamp", "desc")
         .onSnapshot((snapshot) => {
@@ -220,8 +221,10 @@ const ChatBody: React.FC = () => {
               <>
                 <div className="Header">
                   <div className="Header__NameAvatar">
-                    <Avatar className="Header__Avatar">H</Avatar>
-                    <h1>Jonathan Smith</h1>
+                    <Avatar className="Header__Avatar">
+                      {roomName.charAt(0)}
+                    </Avatar>
+                    <h1>{roomName}</h1>
                   </div>
 
                   <div className="Header__Icons">

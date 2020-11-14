@@ -13,7 +13,7 @@ const InputField: React.FC = () => {
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    db.collection("rooms").doc(roomId?.room).collection("messages").add({
+    db.collection("rooms").doc(roomId).collection("messages").add({
       message: message,
       name: user.username,
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),

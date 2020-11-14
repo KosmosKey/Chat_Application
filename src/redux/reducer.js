@@ -4,6 +4,7 @@ import { ADD_NAME, ROOM_ID } from "./types";
 const initalState = {
   user: null,
   roomId: null,
+  roomName: null,
 };
 
 const reducer = (state = initalState, action) => {
@@ -17,7 +18,8 @@ const reducer = (state = initalState, action) => {
     case ROOM_ID:
       return {
         ...state,
-        roomId: action.payload,
+        roomId: action.payload.room,
+        roomName: action.payload.name,
       };
 
     default:
