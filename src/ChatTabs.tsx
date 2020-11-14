@@ -6,7 +6,7 @@ const ChatTabs: React.FC = () => {
   return (
     <div className="ChatTabs">
       <div className="ChatTabs__TitleAvatar">
-        <Avatar>H</Avatar>
+        <Avatar className="ChatTabs__Avatar">H</Avatar>
         <div className="ChatTabs__Name">
           <h2>Jonathan Smith</h2>
           <p>Hello How is it going everyone</p>

@@ -1,23 +1,23 @@
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 .App {
-  height: 100vh;
   display: grid;
   place-items: center;
 }
 .ChatApplication {
   width: 100%;
-  height: 100%;
   display: flex;
   .ChatApplication__Sidebar {
+    height: 100vh;
     padding: 20px;
-    flex: 0.2;
+    flex: 0.25;
     background: #f9f9f9;
     display: flex;
     flex-direction: column;
@@ -49,29 +49,166 @@
       justify-content: space-between;
       .ChatApplication__Header {
         display: flex;
-        align-items: center;
-        color: #80a1ec;
+        align-items: flex-start;
+        justify-content: space-between;
+        color: #5278f7;
         width: 100%;
         padding: 10px;
+        .ChatApplication__Button {
+          .ChatApplication__EditIcon {
+            color: #626264;
+          }
+        }
+
+        .ChatApplication__Profile {
+          margin-top: 10px;
+          display: flex;
+        }
         .ChatApplication__Avatar {
           padding: 25px;
           font-size: 25px;
-          background: #80a1ec;
+          background: #5278f7;
         }
-        h2 {
-          font-size: 25px;
+        .ChatApplication__Name {
           margin-left: 20px;
+          p {
+            color: #656567;
+          }
+          h2 {
+            font-size: 25px;
+          }
         }
       }
     }
     .ChatApplication__BodyChat {
-      padding-top: 50px;
+      margin-top: 20px;
       flex: 1;
       overflow: scroll;
     }
   }
   .ChatApplication__ChatBody {
-    flex: 0.8;
+    flex: 0.75;
     background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    .Header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      border-bottom: 1px solid #d9d9d9;
+      .Header__Icons {
+        margin-right: 50px;
+        .MuiSvgIcon-root {
+          color: #626264;
+          font-size: 30px;
+        }
+      }
+      .Header__NameAvatar {
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        .Header__CircleIcon {
+          color: #2bc735;
+          font-size: 28px;
+          margin-left: 5px;
+          margin-top: 3px;
+        }
+        h1 {
+          margin-left: 15px;
+          color: #5278f7;
+        }
+        .Header__Avatar {
+          padding: 30px;
+          font-size: 30px;
+          background: #5278f7;
+        }
+      }
+    }
   }
+  .MessageBody {
+    flex: 1;
+    padding: 30px 50px;
+    width: 100%;
+    overflow: scroll;
+    border-bottom: 1px solid #dbe2ec;
+  }
+  .MessagesIcons {
+    margin: 30px 0px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 350px;
+
+    .MessagesIcons__Avatar {
+      background: #5278f7;
+      margin-right: 10px;
+    }
+    .MessagesIcons__Message {
+      background: #f9f9f9;
+      line-height: 22px;
+      padding: 20px;
+      border-radius: 15px;
+      font-weight: 500;
+    }
+  }
+  .MessagesIcons.active {
+    margin: 30px 0px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 350px;
+    margin-left: auto;
+    flex-direction: row-reverse;
+
+    .MessagesIcons__Avatar {
+      background: #5278f7;
+      margin-left: 10px;
+    }
+    .MessagesIcons__Message {
+      background: #5278f7;
+      padding: 20px;
+      border-radius: 15px;
+      color: #fff;
+      font-weight: 500;
+      line-height: 22px;
+    }
+  }
+  .InputField {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .InputFields__Container {
+      width: 100%;
+      border-radius: 50px;
+      padding: 10px 50px;
+      display: flex;
+      margin-bottom: 5px;
+    }
+    button {
+      background: #4c7dfe;
+      padding: 15px;
+      color: #fff;
+    }
+    input {
+      font-size: 17px;
+      padding: 13px;
+      border: none;
+      outline-width: 0;
+      background: transparent;
+      width: 100%;
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b2b2b2;
+  border-radius: 10px;
 }

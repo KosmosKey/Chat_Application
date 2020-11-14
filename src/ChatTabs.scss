@@ -1,28 +1,42 @@
 .ChatTabs {
-  padding: 10px;
+  margin: 10px 15px 10px 0;
+  padding: 15px;
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
+  position: relative;
+  border-radius: 15px;
   .ChatTabs__TitleAvatar {
-    padding-top: 5px;
     display: flex;
     align-items: center;
+    .ChatTabs__Avatar {
+      background: #5278f7;
+    }
     .ChatTabs__Name {
       margin-left: 15px;
       h2 {
         font-size: large;
-        color: #80a1ec;
+        color: #5278f7;
       }
       p {
         font-size: small;
-        color: #6d6d6e;
+        font-weight: 500;
+        color: #636267;
       }
     }
   }
   .ChatTabs__TimeStamps {
+    position: absolute;
+    top: 5px;
+    right: 10px;
     span {
       font-size: small;
-      font-weight: bold;
-      color: #6d6d6e;
+      font-weight: 600;
+      color: #b2b2b2;
     }
   }
+}
+
+.ChatTabs:hover {
+  background: #f0f0f0;
 }

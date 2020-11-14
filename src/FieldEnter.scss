@@ -1,0 +1,35 @@
+.FieldEnter {
+  .FiedlEnterContainer {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    input {
+      margin: 10px 0;
+    }
+    .FieldEnter__InputOne {
+      background: black;
+    }
+
+    label {
+      font-weight: 500;
+    }
+
+    h1 {
+      color: #5278f7;
+    }
+  }
+  .overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: #5278f7;
+    z-index: 2;
+  }
+}
