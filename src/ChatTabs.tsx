@@ -14,7 +14,9 @@ const ChatTabs: React.FC<Props> = ({ name, id }) => {
   return (
     <div className="ChatTabs" onClick={() => dispatch(roomId({ room: id }))}>
       <div className="ChatTabs__TitleAvatar">
-        <Avatar className="ChatTabs__Avatar">H</Avatar>
+        <Avatar className="ChatTabs__Avatar">
+          {name?.roomName?.charAt(0)}
+        </Avatar>
         <div className="ChatTabs__Name">
           <h2>{name?.roomName} lorem</h2>
         </div>

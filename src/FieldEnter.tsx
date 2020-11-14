@@ -60,6 +60,9 @@ const FieldEnter: React.FC = () => {
         <Button
           disabled={!targets.username || !targets.descrption}
           type="submit"
+          className={`${
+            !targets.username || !targets.descrption ? "button__disabled" : ""
+          }`}
         >
           Submit
         </Button>

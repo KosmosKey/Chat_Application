@@ -8,15 +8,17 @@ import { useSelector } from "react-redux";
 const InputField: React.FC = () => {
   const [message, setMessage] = useState<string>("");
   const roomId = useSelector((state: any) => state.user.roomId);
+  const user = useSelector((state: any) => state.user.user);
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
 
     db.collection("rooms").doc(roomId?.room).collection("messages").add({
       message: message,
-      name: "Michael",
+      name: user.username,
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
     });
+    setMessage("");
   };
 
   return (

@@ -90,6 +90,7 @@
         .ChatApplication__Avatar {
           padding: 25px;
           font-size: 25px;
+          font-weight: bold;
           background: #5278f7;
         }
         .ChatApplication__Name {
@@ -135,8 +136,30 @@
       align-items: center;
       padding: 20px;
       border-bottom: 1px solid #d9d9d9;
+      .Header__InputField {
+        padding: 15px;
+        width: 0px;
+        border: none;
+        outline-width: 0;
+        background: #f9f9f9;
+        opacity: 0;
+        transition: 350ms ease;
+      }
+
+      .Header__InputField.active {
+        opacity: 1;
+        width: 300px;
+      }
+      .HeartFavorite {
+        color: red;
+      }
+      .NotifacationFavourite {
+        color: #2bc735 !important;
+      }
       .Header__Icons {
         margin-right: 50px;
+        margin-left: 100px;
+        display: flex;
         .MuiSvgIcon-root {
           color: #626264;
           font-size: 30px;
@@ -159,6 +182,7 @@
         .Header__Avatar {
           padding: 30px;
           font-size: 30px;
+          font-weight: bold;
           background: #5278f7;
         }
       }
@@ -186,6 +210,7 @@
     .MessagesIcons__Avatar {
       background: #5278f7;
       margin-right: 10px;
+      font-weight: bold;
     }
 
     .MessagesIcons__Message {
@@ -194,6 +219,12 @@
       padding: 20px;
       border-radius: 15px;
       font-weight: 500;
+    }
+    .MessagesIcons__Name {
+      color: #5278f7;
+      font-weight: 600;
+      margin-left: 5px;
+      margin-bottom: 10px;
     }
   }
   .MessagesIcons.active {
@@ -208,6 +239,10 @@
     .MessagesIcons__Avatar {
       background: #5278f7;
       margin-left: 10px;
+    }
+    .MessagesIcons__Name {
+      text-align: right;
+      margin-right: 10px;
     }
     .MessagesIcons__Message {
       background: #5278f7;

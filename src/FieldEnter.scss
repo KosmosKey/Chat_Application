@@ -44,6 +44,19 @@
       text-transform: capitalize;
       font-size: 17px;
       font-weight: 600;
+      border: 2px solid transparent;
+    }
+
+    button:hover {
+      background: transparent;
+      border: 2px solid #5278f7;
+      color: #5278f7;
+      font-weight: bold;
+    }
+
+    .button__disabled {
+      background: #f9f9f9;
+      color: #5278f7;
     }
     .FieldEnter__InputOne {
       border-radius: 15px;

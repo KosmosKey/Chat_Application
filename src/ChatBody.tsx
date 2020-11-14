@@ -3,7 +3,11 @@ import firebase from "firebase";
 import { Avatar, IconButton } from "@material-ui/core";
 import ChatTabs from "./ChatTabs";
 import CreateOutlinedIcon from "@material-ui/icons/CreateOutlined";
-import Header from "./Header";
+import FavoriteBorderOutlinedIcon from "@material-ui/icons/FavoriteBorderOutlined";
+import NotificationsOutlinedIcon from "@material-ui/icons/NotificationsOutlined";
+import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import NotificationsIcon from "@material-ui/icons/Notifications";
 import InputField from "./InputField";
 import MessagesIcons from "./MessagesIcons";
 import AddIcon from "@material-ui/icons/Add";
@@ -24,11 +28,17 @@ const ChatBody: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [loadingRoom, setLoadingRoom] = useState<boolean>(true);
   const [boleanInput, setBoleanInput] = useState<boolean>(false);
+  const [heart, setHeart] = useState(false);
+  const [notification, setNotification] = useState(false);
+  const [inputActive, setInputActive] = useState(false);
+  const [inputSearch, setInputSearch] = useState<string>("");
 
   const [targets, setTargets] = useState<targets>({
     username: "",
     description: "",
   });
+
+  const checkInput = inputSearch.length < 1;
 
   const user = useSelector((state: any) => state.user.user);
   const roomId = useSelector((state: any) => state.user.roomId);
@@ -65,7 +75,7 @@ const ChatBody: React.FC = () => {
           );
         });
     }
-  }, [roomId]);
+  }, [roomId, checkInput]);
 
   const submitForm = (e: React.FormEvent) => {
     e.preventDefault();
@@ -105,6 +115,27 @@ const ChatBody: React.FC = () => {
     }
   };
 
+  const heartToggle = () => {
+    setHeart(!heart);
+  };
+
+  const notificationToggle = () => {
+    setNotification(!notification);
+  };
+
+  const inputSearchFunction = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputSearch(e.target.value);
+
+    setRoomMessages(
+      roomMessages.filter(
+        (item: any) =>
+          item.messages.message.toLowerCase().indexOf(e.target.value) > -1 ||
+          item.messages.message.toUpperCase().indexOf(e.target.value) > -1
+      )
+    );
+  };
+
+  console.log(messages);
   return (
     <div className="ChatApplication">
       <div className="ChatApplication__Sidebar">
@@ -187,7 +218,41 @@ const ChatBody: React.FC = () => {
               <h1 className="ChatApplication__NoRooms">Loading...</h1>
             ) : (
               <>
-                <Header />
+                <div className="Header">
+                  <div className="Header__NameAvatar">
+                    <Avatar className="Header__Avatar">H</Avatar>
+                    <h1>Jonathan Smith</h1>
+                  </div>
+
+                  <div className="Header__Icons">
+                    <input
+                      type="text"
+                      className={`Header__InputField ${
+                        inputActive && "active"
+                      }`}
+                      placeholder="Search for Message"
+                      value={inputSearch}
+                      onChange={inputSearchFunction}
+                    />
+                    <IconButton onClick={() => setInputActive(!inputActive)}>
+                      <SearchOutlinedIcon />
+                    </IconButton>
+                    <IconButton onClick={heartToggle}>
+                      {heart ? (
+                        <FavoriteIcon className="HeartFavorite" />
+                      ) : (
+                        <FavoriteBorderOutlinedIcon />
+                      )}
+                    </IconButton>
+                    <IconButton onClick={notificationToggle}>
+                      {notification ? (
+                        <NotificationsIcon className="NotifacationFavourite" />
+                      ) : (
+                        <NotificationsOutlinedIcon />
+                      )}
+                    </IconButton>
+                  </div>
+                </div>
                 <div className="MessageBody">
                   {roomMessages.length === 0 ? (
                     <h1 className="MessagesBody__NoRoom">
@@ -195,7 +260,7 @@ const ChatBody: React.FC = () => {
                     </h1>
                   ) : (
                     roomMessages.map((item: any) => (
-                      <MessagesIcons name={item.messages} />
+                      <MessagesIcons key={item.id} name={item.messages} />
                     ))
                   )}
                 </div>
