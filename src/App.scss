@@ -28,13 +28,16 @@
       margin-top: 20px;
       padding: 10px;
       border-radius: 50px;
+      button {
+        background: #5278f7;
+      }
       .ChatApplication__SearchIcon {
-        margin-left: 10px;
-        color: #9e9e9e !important;
+        color: #fff !important;
       }
       input {
         padding: 7px;
         outline-width: 0;
+        width: 100%;
         border: none;
         font-size: 16px;
         color: #9e9e9e;
@@ -63,6 +66,26 @@
         .ChatApplication__Profile {
           margin-top: 10px;
           display: flex;
+          align-items: center;
+          width: 100%;
+          .ChatApplications__Inputs {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 20px;
+            width: 100%;
+            input {
+              width: 100%;
+              margin-top: 10px;
+              margin-bottom: 10px;
+              padding: 15px;
+              margin-left: 20px;
+              border: none;
+              outline-width: 0;
+              font-size: 16px;
+            }
+          }
         }
         .ChatApplication__Avatar {
           padding: 25px;
@@ -84,6 +107,11 @@
       margin-top: 20px;
       flex: 1;
       overflow: scroll;
+      .ChatApplication__H3Loading {
+        text-align: center;
+        margin-top: 50px;
+        color: #4c7dfe;
+      }
     }
   }
   .ChatApplication__ChatBody {
@@ -92,6 +120,15 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
+    position: relative;
+    .ChatApplication__NoRooms {
+      color: #4c7dfe;
+      display: grid;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
     .Header {
       display: flex;
       justify-content: space-between;
@@ -133,18 +170,24 @@
     width: 100%;
     overflow: scroll;
     border-bottom: 1px solid #dbe2ec;
+    .MessagesBody__NoRoom {
+      color: #4c7dfe;
+      text-align: center;
+    }
   }
   .MessagesIcons {
     margin: 30px 0px;
     display: flex;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: flex-start;
     max-width: 350px;
+    margin-right: auto;
 
     .MessagesIcons__Avatar {
       background: #5278f7;
       margin-right: 10px;
     }
+
     .MessagesIcons__Message {
       background: #f9f9f9;
       line-height: 22px;
@@ -157,7 +200,7 @@
     margin: 30px 0px;
     display: flex;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: flex-start;
     max-width: 350px;
     margin-left: auto;
     flex-direction: row-reverse;

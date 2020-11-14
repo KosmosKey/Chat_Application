@@ -8,11 +8,49 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 5;
+    min-width: 650px;
+    border-radius: 5px;
+    padding: 50px;
+
+    h1 {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .MuiSvgIcon-root {
+      color: #5278f7;
+      font-size: 30px;
+      margin-right: 15px;
+    }
     input {
       margin: 10px 0;
+      padding: 15px;
+      font-size: 15px;
+      flex: 1;
+      outline-width: 0;
+      border: none;
+      background: #f9f9f9;
+      border-radius: 50px;
+    }
+    label {
+      margin: 10px 0;
+      cursor: pointer;
+    }
+
+    button {
+      margin-top: 25px;
+      background: #5278f7;
+      color: #fff;
+      text-transform: capitalize;
+      font-size: 17px;
+      font-weight: 600;
     }
     .FieldEnter__InputOne {
-      background: black;
+      border-radius: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
     }
 
     label {

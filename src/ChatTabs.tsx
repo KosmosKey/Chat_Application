@@ -1,19 +1,26 @@
 import React from "react";
 import "./ChatTabs.scss";
 import { Avatar } from "@material-ui/core";
+import { useDispatch } from "react-redux";
+import { roomId } from "./redux/actions";
 
-const ChatTabs: React.FC = () => {
+interface Props {
+  name: any;
+  id: string;
+}
+
+const ChatTabs: React.FC<Props> = ({ name, id }) => {
+  const dispatch = useDispatch();
   return (
-    <div className="ChatTabs">
+    <div className="ChatTabs" onClick={() => dispatch(roomId({ room: id }))}>
       <div className="ChatTabs__TitleAvatar">
         <Avatar className="ChatTabs__Avatar">H</Avatar>
         <div className="ChatTabs__Name">
-          <h2>Jonathan Smith</h2>
-          <p>Hello How is it going everyone</p>
+          <h2>{name?.roomName} lorem</h2>
         </div>
       </div>
       <div className="ChatTabs__TimeStamps">
-        <span>15:35 AM</span>
+        <span>{name?.timestamp?.toDate().toUTCString()}</span>
       </div>
     </div>
   );
