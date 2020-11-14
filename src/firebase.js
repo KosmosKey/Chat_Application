@@ -14,5 +14,3 @@ const firebaseApp = firebase.initializeApp(firebaseConfig);
 const db = firebaseApp.firestore();
 
 export default db;
-
-const three = "3";
