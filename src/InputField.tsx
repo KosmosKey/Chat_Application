@@ -16,7 +16,6 @@ const InputField: React.FC = () => {
     db.collection("rooms").doc(roomId).collection("messages").add({
       message: message,
       name: user.username,
-      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
     });
     setMessage("");
   };
