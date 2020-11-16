@@ -1,7 +1,7 @@
 # Chat Application built with React JS (Redux) + Firebase ⚛️ 🔥 
 
 ### `Check out the Link ⬇️`
-Link: https://chat-application-ec145.web.app/
+Link: https://chatapplication-725aa.web.app/
 
 
 ### `Feel free to check out the code`
